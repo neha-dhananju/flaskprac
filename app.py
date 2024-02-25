@@ -1,5 +1,5 @@
-from flask import Flask,request,render_template,jsonify
-import json
+from flask import Flask,request,render_template
+
 
 obj=Flask(__name__)
 
@@ -24,7 +24,7 @@ def math_operator():
         result=int(number1)*int(number2)
     else:
         result=int(number1)/int(number2)
-    return jsonify(result)
+    return "The operation is {} and the result is {}".format(operation,result)
 
 if __name__=='__main__':
     obj.run(debug='True')
